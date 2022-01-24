@@ -32,7 +32,7 @@ treeButton.addEventListener('click', () => {
 boulderButton.addEventListener('click', () => {
     const hidingSpot = Math.floor(Math.random() * 3);
     const answer = hidingPlaces[hidingSpot];
-    handleGuess(answer, 'boulder');
+    handleGuess(answer, 'boulder'); 
 });
 
 function handleGuess(userGuess, correctSpot) {
@@ -40,9 +40,10 @@ function handleGuess(userGuess, correctSpot) {
     resetStyles();
     totalGuesses++;
 
-    const correctHidingPlaceEl = document.getElementById(`${correctSpot}-container`);
-
+    const correctHidingPlaceEl = document.getElementById(`${userGuess}-container`);
+    
     correctHidingPlaceEl.classList.add('face');
+    
 
     if (userGuess === correctSpot) {
         correctGuesses++;
